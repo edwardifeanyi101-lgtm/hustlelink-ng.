@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#137a4b">
+  <meta name="description" content="Discover Nigerian small businesses and contact sellers directly on WhatsApp with HustleLink NG.">
+  <title>HustleLink NG — Discover Local Businesses</title>
+  <style>
+    :root{--green:#137a4b;--green-dark:#075b36;--mint:#eaf7ef;--ink:#17251e;--muted:#607168;--line:#dce8e0;--white:#fff;--bg:#f7faf8;--gold:#f4c95d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}
+    header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-size:1.2rem;font-weight:850;color:var(--green);text-decoration:none;letter-spacing:-.04em}.brand span{color:var(--ink)}
+    .navlinks{display:flex;align-items:center;gap:18px}.navlinks a{text-decoration:none;font-weight:650;font-size:.94rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 17px;background:var(--green);color:#fff;text-decoration:none;font-weight:750;cursor:pointer;min-height:44px}
+    .btn:hover{background:var(--green-dark)}.btn.secondary{background:#fff;color:var(--green);border:1px solid var(--green)}.btn.small{padding:9px 12px;font-size:.9rem;min-height:38px}
+    .hero{background:linear-gradient(130deg,#eaf7ef 0%,#f7faf8 65%,#fff3d2 100%);padding:58px 0 48px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center}
+    .eyebrow{color:var(--green);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em}
+    h1{font-size:clamp(2.25rem,6vw,4rem);line-height:1.06;letter-spacing:-.055em;margin:12px 0 18px;max-width:720px}
+    .hero p{font-size:1.1rem;color:#43564b;max-width:640px}
+    .hero-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 16px 45px #0d3e2010}
+    .hero-card .big{font-size:2.7rem}.hero-card h2{margin:4px 0 8px;font-size:1.2rem}.hero-card p{font-size:.96rem;margin:0}
+    .searchbox{display:flex;gap:10px;margin-top:25px;max-width:680px}.searchbox input{flex:1;min-width:0}
+    input,select{width:100%;border:1px solid #cddbd1;border-radius:12px;padding:13px 14px;background:#fff;color:var(--ink);font:inherit;min-height:48px}
+    section{padding:44px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}
+    h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;letter-spacing:-.035em;margin:0 0 8px}.sub{color:var(--muted);margin:0}
+    .categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .cat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px 12px;text-align:left;cursor:pointer;color:var(--ink);font:inherit;font-weight:700}
+    .cat .emoji{display:block;font-size:1.65rem;margin-bottom:7px}.cat:hover,.cat.active{border-color:var(--green);background:var(--mint)}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.filters input{flex:1;min-width:190px}.filters select{width:auto;min-width:190px}
+    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .biz{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+    .biz-top{background:var(--mint);padding:20px;display:flex;align-items:center;gap:13px}
+    .biz-icon{width:54px;height:54px;border-radius:15px;background:#fff;display:grid;place-items:center;font-size:1.7rem;flex-shrink:0}
+    .biz h3{margin:0;font-size:1.08rem}.pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:99px;padding:3px 9px;font-size:.75rem;color:var(--green-dark);font-weight:750;margin-top:5px}
+    .biz-body{padding:17px;display:flex;flex-direction:column;flex:1}.biz-body p{margin:0 0 9px;color:#4f6056;font-size:.94rem}.biz-body .price{font-weight:800;color:var(--ink)}.biz-body .btn{margin-top:auto}
+    .demo-note{border:1px solid #e7d38c;background:#fff8db;border-radius:12px;padding:12px 14px;font-size:.9rem;color:#66511a;margin-bottom:18px}
+    .empty{grid-column:1/-1;padding:28px;text-align:center;border:1px dashed var(--line);border-radius:16px;color:var(--muted);background:#fff}
+    .join{background:var(--green-dark);color:#fff;border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.join p{color:#d4e9dc;margin-bottom:0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:20px;border:1px solid var(--line);border-radius:16px;background:#fff}.step b{display:block;margin-bottom:5px}
+    footer{background:#10271b;color:#dcebe1;padding:28px 0;margin-top:20px}footer .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}footer p{margin:4px 0;color:#bbd0c2;font-size:.9rem}
+    .smallprint{font-size:.82rem;color:var(--muted)}.hidden{display:none!important}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero{padding:42px 0}.categories{grid-template-columns:repeat(2,1fr)}.listings{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.join{grid-template-columns:1fr}.navlinks{gap:10px}.navlinks .plain{display:none}}
+    @media(max-width:520px){.listings{grid-template-columns:1fr}.nav{min-height:62px}.brand{font-size:1.05rem}.navlinks .btn{padding:9px 10px;font-size:.84rem}.searchbox{flex-direction:column}.section-head{align-items:start;flex-direction:column}.hero-card{padding:19px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="HustleLink NG home">HustleLink <span>NG</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a class="plain" href="#businesses">Find businesses</a>
+      <a class="plain" href="#how">How it works</a>
+      <a class="btn small" href="#join">List your business</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Discover local. Support local.</div>
+        <h1>Find the people behind Nigeria’s small businesses.</h1>
+        <p>Explore products and services, compare what’s available, and contact business owners directly on WhatsApp.</p>
+        <div class="searchbox">
+          <input id="heroSearch" type="search" placeholder="Try food, fashion, repairs…" aria-label="Search businesses">
+          <a class="btn" href="#businesses" id="searchButton">Explore businesses</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="big" aria-hidden="true">🇳🇬</div>
+        <h2>Big support for small business</h2>
+        <p>From food vendors and tailors to phone repairers and tutors, discover independent businesses in one place.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap" id="categories">
+    <div class="section-head">
+      <div><h2>Explore categories</h2><p class="sub">Choose what you’re looking for.</p></div>
+    </div>
+    <div class="categories" id="categoryButtons">
+      <button class="cat active" data-category="All"><span class="emoji">🛍️</span>All businesses</button>
+      <button class="cat" data-category="Food & Groceries"><span class="emoji">🍲</span>Food & groceries</button>
+      <button class="cat" data-category="Fashion & Clothing"><span class="emoji">👗</span>Fashion</button>
+      <button class="cat" data-category="Beauty & Hair"><span class="emoji">💇🏽</span>Beauty & hair</button>
+      <button class="cat" data-category="Phones & Electronics"><span class="emoji">📱</span>Phones & electronics</button>
+      <button class="cat" data-category="Repairs & Technical Services"><span class="emoji">🛠️</span>Repairs</button>
+      <button class="cat" data-category="Home & Cleaning Services"><span class="emoji">🧹</span>Home services</button>
+      <button class="cat" data-category="Education & Tutoring"><span class="emoji">📚</span>Education</button>
+      <button class="cat" data-category="Transport & Delivery"><span class="emoji">🛵</span>Transport</button>
+      <button class="cat" data-category="Events & Photography"><span class="emoji">📸</span>Events & photo</button>
+    </div>
+  </section>
+
+  <section class="wrap" id="businesses">
+    <div class="section-head">
+      <div><h2>Discover businesses</h2><p class="sub">Search by business name, service, category, or location.</p></div>
+    </div>
+    <div class="demo-note"><strong>Setup note:</strong> The businesses below are examples to demonstrate the layout, not real or verified sellers. Replace them with real listings only after getting the owners’ permission.</div>
+    <div class="filters">
+      <input id="searchInput" type="search" placeholder="Search businesses or locations…" aria-label="Search listings">
+      <select id="locationFilter" aria-label="Filter by location">
+        <option value="">All locations</option><option value="Lagos">Lagos (sample)</option><option value="Abuja">Abuja (sample)</option><option value="Ibadan">Ibadan (sample)</option>
+      </select>
+      <select id="sortFilter" aria-label="Sort listings">
+        <option value="default">Recommended order</option><option value="name">Business name A–Z</option>
+      </select>
+    </div>
+    <div class="listings" id="listingGrid" aria-live="polite"></div>
+    <p class="smallprint">HustleLink NG is a directory, not a seller or payment processor. Verify sellers, prices, and terms before paying.</p>
+  </section>
+
+  <section class="wrap" id="join">
+    <div class="join">
+      <div><h2>Own a small business?</h2><p>Get discovered by more people. Submit your business details for a free listing during our launch.</p></div>
+      <a class="btn" href="#" id="registerButton">Register your business →</a>
+    </div>
+    <p class="smallprint" style="margin-top:12px">Before launch, connect the registration button to your Google Form using the instructions in README.md.</p>
+  </section>
+
+  <section class="wrap" id="how">
+    <div class="section-head"><div><h2>How HustleLink NG works</h2><p class="sub">Simple for buyers. Helpful for local sellers.</p></div></div>
+    <div class="steps">
+      <div class="step"><b>1. Discover</b><span>Search local businesses and explore categories.</span></div>
+      <div class="step"><b>2. Compare</b><span>Review the information, services, prices, and location shared by sellers.</span></div>
+      <div class="step"><b>3. Connect</b><span>Message the seller on WhatsApp to ask questions or place an order.</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong>HustleLink NG</strong><p>Helping small businesses get discovered.</p></div>
+    <p>Independent directory • Verify details before payment</p>
+  </div>
+</footer>
+
+<script>
+  // SETUP: Replace this with your published Google Form URL before launch.
+  const REGISTRATION_FORM_URL = "PASTE_YOUR_GOOGLE_FORM_URL_HERE";
+
+  // Replace these example entries with businesses that have agreed to be listed.
+  // Use Nigerian WhatsApp numbers in international format without +, spaces, or dashes.
+  const businesses = [
+    {name:"Sample Kitchen",category:"Food & Groceries",location:"Lagos",description:"Example listing for a food vendor. Replace with the owner's real menu and details.",price:"Add price range",emoji:"🍲",phone:"2348000000001"},
+    {name:"Sample Stitch Studio",category:"Fashion & Clothing",location:"Lagos",description:"Example listing for tailoring and clothing. Replace with verified services.",price:"Add price range",emoji:"👗",phone:"2348000000002"},
+    {name:"Sample Phone Care",category:"Phones & Electronics",location:"Abuja",description:"Example listing for phone accessories or repairs. Replace with real information.",price:"Add price range",emoji:"📱",phone:"2348000000003"},
+    {name:"Sample Glow Studio",category:"Beauty & Hair",location:"Ibadan",description:"Example listing for hair and beauty services. Replace with a real approved listing.",price:"Add price range",emoji:"💇🏽",phone:"2348000000004"},
+    {name:"Sample Fix-It Services",category:"Repairs & Technical Services",location:"Lagos",description:"Example listing for home or device repairs. Replace with verified details.",price:"Add price range",emoji:"🛠️",phone:"2348000000005"},
+    {name:"Sample Learning Corner",category:"Education & Tutoring",location:"Abuja",description:"Example listing for tutoring. Replace with the provider's real services.",price:"Add price range",emoji:"📚",phone:"2348000000006"}
+  ];
+  let selectedCategory = "All";
+  const grid = document.getElementById("listingGrid");
+  const searchInput = document.getElementById("searchInput");
+  const locationFilter = document.getElementById("locationFilter");
+  const sortFilter = document.getElementById("sortFilter");
+
+  function whatsappUrl(phone, name) {
+    const message = encodeURIComponent("Hello, I found your business on HustleLink NG. Please tell me more about " + name + ".");
+    return "https://wa.me/" + phone + "?text=" + message;
+  }
+  function render() {
+    const term = (searchInput.value || document.getElementById("heroSearch").value).trim().toLowerCase();
+    const loc = locationFilter.value;
+    let filtered = businesses.filter(b => {
+      const matchesCategory = selectedCategory === "All" || b.category === selectedCategory;
+      const text = [b.name,b.category,b.location,b.description].join(" ").toLowerCase();
+      return matchesCategory && (!term || text.includes(term)) && (!loc || b.location === loc);
+    });
+    if (sortFilter.value === "name") filtered.sort((a,b)=>a.name.localeCompare(b.name));
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="empty">No matching businesses yet. Try another search or category.</div>';
+      return;
+    }
+    grid.innerHTML = filtered.map(b => `
+      <article class="biz">
+        <div class="biz-top"><div class="biz-icon" aria-hidden="true">${b.emoji}</div><div><h3>${escapeHtml(b.name)}</h3><span class="pill">${escapeHtml(b.category)}</span></div></div>
+        <div class="biz-body">
+          <p>📍 ${escapeHtml(b.location)}</p>
+          <p>${escapeHtml(b.description)}</p>
+          <p class="price">${escapeHtml(b.price)}</p>
+          <a class="btn" href="${whatsappUrl(b.phone,b.name)}" target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a>
+        </div>
+      </article>`).join("");
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  }
+  document.querySelectorAll(".cat").forEach(btn => btn.addEventListener("click", () => {
+    selectedCategory = btn.dataset.category;
+    document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("active",b===btn));
+    render();
+    document.getElementById("businesses").scrollIntoView({behavior:"smooth"});
+  }));
+  searchInput.addEventListener("input", render);
+  document.getElementById("heroSearch").addEventListener("input", () => {searchInput.value=document.getElementById("heroSearch").value;render();});
+  document.getElementById("searchButton").addEventListener("click", () => {searchInput.value=document.getElementById("heroSearch").value;render();});
+  locationFilter.addEventListener("change", render);
+  sortFilter.addEventListener("change", render);
+  document.getElementById("registerButton").addEventListener("click", e => {
+    if (REGISTRATION_FORM_URL === "PASTE_YOUR_GOOGLE_FORM_URL_HERE" || !REGISTRATION_FORM_URL) {
+      e.preventDefault();
+      alert("Setup needed: open index.html in GitHub, find REGISTRATION_FORM_URL, and paste your published Google Form link there.");
+    } else {
+      e.currentTarget.href = REGISTRATION_FORM_URL;
+      e.currentTarget.target = "_blank";
+      e.currentTarget.rel = "noopener noreferrer";
+    }
+  });
+  render();
+</script>
+</body>
+</html>
